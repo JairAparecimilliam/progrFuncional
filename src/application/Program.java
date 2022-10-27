@@ -15,12 +15,9 @@ public class Program {
 		list.add(new Product("Notebook", 1200.0));
 		list.add(new Product("Tablet", 450.0));
 
-		// cria variavel comp q sera um objeto do tipo Comparator Product
-		Comparator<Product> comp = new Comparator<Product>() {
-			@Override
-			public int compare(Product p1, Product p2) {
-				return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-			}
+		// (p1, p2) -> levando a implementação da função anonima a seguir
+		Comparator<Product> comp = (p1, p2) -> {
+			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 		};
 
 		list.sort(comp);
