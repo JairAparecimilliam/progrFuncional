@@ -15,11 +15,9 @@ public class Program {
 		list.add(new Product("Notebook", 1200.0));
 		list.add(new Product("Tablet", 450.0));
 
-		// (p1, p2) -> levando a implementação da função anonima a seguir
-		Comparator<Product> comp = (p1, p2) -> {
-			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-		};
-
+		//comp vai ser uma função que recebe dois argumentos p1 e p2 e a implementação da função depois da arrow 
+		Comparator<Product> comp = (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
+		
 		list.sort(comp);
 
 		for (Product p : list) {
